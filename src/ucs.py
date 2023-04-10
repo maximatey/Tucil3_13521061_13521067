@@ -2,7 +2,7 @@ import heapq
 
 
 
-def ucs(graph, start, goal):
+def ucs(dist, graph, start, goal):
     """
     Route planning berbasis UCS pada matriks berbobot
     :param graph: Matriks bertetanggaan berbobot, dalam bentuk nested list
@@ -23,8 +23,8 @@ def ucs(graph, start, goal):
         # Pop titik dengan nilai f(n) terkecil dari queue
         cost, current, path = heapq.heappop(queue)
         
-        print(current)
-        print(cost)
+        # print(current)
+        # print(cost)
         
         
         
@@ -40,14 +40,14 @@ def ucs(graph, start, goal):
             for neighbor in get_neighbors(graph, current, visited):
                 tmppath = path
                 # Hitung nilai f(n) dari tetangga tersebut
-                neighbor_cost = cost + graph[current][neighbor]
+                neighbor_cost = cost + graph[current][neighbor] * dist[current][neighbor]
                 tmppath = tmppath + [neighbor]
                  
                 # Masukkan tetangga ke queue
                 heapq.heappush(queue, (neighbor_cost, neighbor, tmppath))
         
-        for i in queue:
-            print(i)
+        # for i in queue:
+        #     print(i)
         print("========================")
     
     # Jika tidak ditemukan path dari titik awal ke titik tujuan
@@ -72,29 +72,29 @@ def get_neighbors(graph, current,visited):
 
 # Contoh penggunaan
 # A, Z, O, S, F, B, P, C, R, D, M, L, T
-graph = [
-    [0, 75, 0, 140, 0, 0, 0, 0, 0,0,0,0, 118],
-    [75, 0, 71, 0, 0, 0 ,0,0,0,0,0,0,0],
-    [0, 71, 0, 151, 0, 0, 0, 0,0,0,0,0,0],
-    [140, 0, 151, 0, 99, 0 ,0,0,80,0,0,0,0],
-    [0, 0, 0, 99, 0, 211 ,0,0,0,0,0,0,0],
-    [0, 0, 0, 0, 211, 0 ,101, 0, 0, 0,0 ,0,0],
-    [0, 0, 0, 0, 0, 101 ,0, 138, 97, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0 , 138, 0, 146, 0, 0, 0, 0],
-    [0, 0, 0, 80, 0, 0 ,97,146, 0, 120,0,0,0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 120, 0, 75, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 0, 70, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 0, 111],
-    [118, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 0],
-]
-start = 0
-goal = 8
+# graph = [
+#     [0, 75, 0, 140, 0, 0, 0, 0, 0,0,0,0, 118],
+#     [75, 0, 71, 0, 0, 0 ,0,0,0,0,0,0,0],
+#     [0, 71, 0, 151, 0, 0, 0, 0,0,0,0,0,0],
+#     [140, 0, 151, 0, 99, 0 ,0,0,80,0,0,0,0],
+#     [0, 0, 0, 99, 0, 211 ,0,0,0,0,0,0,0],
+#     [0, 0, 0, 0, 211, 0 ,101, 0, 0, 0,0 ,0,0],
+#     [0, 0, 0, 0, 0, 101 ,0, 138, 97, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0 , 138, 0, 146, 0, 0, 0, 0],
+#     [0, 0, 0, 80, 0, 0 ,97,146, 0, 120,0,0,0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 120, 0, 75, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 0, 70, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 0, 111],
+#     [118, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 0],
+# ]
+# start = 0
+# goal = 8
 
-path_cost, path = ucs(graph, start, goal)
-if path_cost != -1:
-    print("Path cost:", path_cost)
-else:
-    print("Path not found")
+# path_cost, path = ucs(graph, start, goal)
+# if path_cost != -1:
+#     print("Path cost:", path_cost)
+# else:
+#     print("Path not found")
 
-for i in path:
-    print(i)
+# for i in path:
+#     print(i)

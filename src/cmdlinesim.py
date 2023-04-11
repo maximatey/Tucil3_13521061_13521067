@@ -7,7 +7,7 @@ from visgraph import *
 def distance(arg1,arg2):
     return math.sqrt((arg1[0]-arg1[1])**2 + (arg1[1]-arg2[1])**2)
 
-filename = input("Filename (in .txt)): ")
+filename = input("Filename (in .txt): ")
 matrix, koordinat = readFile(filename)
 
 n_points = len(koordinat)
@@ -31,8 +31,9 @@ as_totalcost, as_cost, as_path = astar(dist, matrix ,start, end)
 # print(as_path)
 # print(as_cost)
 
-
-if as_cost > ucs_cost: 
-    drawGraph(matrix,ucs_path)
-else:
-    drawGraph(matrix,as_path)
+print("Displaying graph for UCS Algorithm...")
+print("...")
+drawGraph(dist,ucs_path, matrix)
+print("Displaying graph for A* Algorithm...")
+print("...")
+drawGraph(dist, as_path, matrix)

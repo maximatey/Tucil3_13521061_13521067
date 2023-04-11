@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def drawGraph(graph, path):
+def drawGraph(graph, path, adj):
     # Inisialisasi graf
     G = nx.Graph()
 
@@ -11,7 +11,7 @@ def drawGraph(graph, path):
     # Tambahkan edge
     for i in range(len(graph)):
         for j in range(i+1, len(graph)):
-            if graph[i][j] != 0:
+            if adj[i][j] != 0:
                 G.add_edge(i, j, weight=graph[i][j])
 
     # Gambar graf dengan jalur terpendek

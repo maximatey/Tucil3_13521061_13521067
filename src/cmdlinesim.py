@@ -2,6 +2,7 @@ import math
 from astar import *
 from ucs import *
 from iofile import *
+from visgraph import *
 
 def distance(arg1,arg2):
     return math.sqrt((arg1[0]-arg1[1])**2 + (arg1[1]-arg2[1])**2)
@@ -25,7 +26,9 @@ ucs_cost, ucs_path = ucs(dist, matrix,start,end)
 
 as_totalcost, as_cost, as_path = astar(dist, matrix ,start, end)
 
-print(ucs_cost)
-print(ucs_path)
-print(as_path)
-print(as_cost)
+# print(ucs_cost)
+# print(ucs_path)
+# print(as_path)
+# print(as_cost)
+
+drawGraph(matrix,ucs_path)

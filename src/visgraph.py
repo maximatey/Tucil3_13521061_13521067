@@ -16,7 +16,7 @@ def drawGraph(graph, path, adj):
 
     # Gambar graf dengan jalur terpendek
     pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_size=500)
+    nx.draw(G, pos, with_labels=True, node_size=250)
     labels = nx.get_edge_attributes(G, 'weight')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, font_size=10)
     path_edges = list(zip(path, path[1:]))

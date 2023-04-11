@@ -7,7 +7,7 @@ def astar(strdist, graph, start, goal):
     visited = set()
     
     # Masukkan titik awal ke queue
-    heapq.heappush(queue, (0, 0, start, [start]))
+    heapq.heappush(queue, (strdist[goal][start], 0, start, [start]))
     
     while queue:
         

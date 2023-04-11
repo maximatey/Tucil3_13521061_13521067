@@ -26,11 +26,6 @@ ucs_cost, ucs_path = ucs(dist, matrix,start,end)
 
 as_totalcost, as_cost, as_path = astar(dist, matrix ,start, end)
 
-# print(ucs_cost)
-# print(ucs_path)
-# print(as_path)
-# print(as_cost)
-
 print("Displaying graph for UCS Algorithm...")
 print("...")
 drawGraph(dist,ucs_path, matrix)

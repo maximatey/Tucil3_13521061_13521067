@@ -38,7 +38,7 @@ with open('map.html', 'w') as f:
         f.write(str(coord[0]) + ',' + str(coord[1]) + '&destination=')
         ax.annotate(loc, coord[::-1])
     f.seek(f.tell()-13)
-    f.write('&key=your_API_key"></iframe>')
+    f.write('&key=AIzaSyACHjIhw1jMpcIOUYLepvTWbNgfw7gEhu0"></iframe>')
     ax.imshow(plt.imread(f.name), extent=[107.58, 107.65, -6.91, -6.86])
 
 # Draw graph

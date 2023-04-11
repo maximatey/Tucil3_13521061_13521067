@@ -31,4 +31,7 @@ as_totalcost, as_cost, as_path = astar(dist, matrix ,start, end)
 # print(as_path)
 # print(as_cost)
 
-drawGraph(matrix,ucs_path)
+if as_cost > ucs_cost: 
+    drawGraph(matrix,ucs_path)
+else:
+    drawGraph(matrix,as_path)

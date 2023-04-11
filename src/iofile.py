@@ -14,7 +14,7 @@ def readFile(filename):
             matrix_elements = file.readline().strip().split()
             row = []
             for j in range(cols):
-                row.append(int(matrix_elements[j]))
+                row.append(float(matrix_elements[j]))
             matrix.append(row)
 
 
@@ -24,8 +24,8 @@ def readFile(filename):
         
         for i in range(rows):
             tmpkoor=[]
-            tmpkoor.append(int(koordinat_elements[0]))
-            tmpkoor.append(int(koordinat_elements[1]))
+            tmpkoor.append(float(koordinat_elements[0]))
+            tmpkoor.append(float(koordinat_elements[1]))
             koordinat.append(tmpkoor)
             koordinat_elements=file.readline().strip().split()
         

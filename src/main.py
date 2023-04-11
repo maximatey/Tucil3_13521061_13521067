@@ -34,6 +34,7 @@ print("Displaying graph for A* Algorithm...")
 print("...")
 drawGraph(dist, as_path, matrix)
 
+print(as_path)
 gmaps = googlemaps.Client(key='AIzaSyACHjIhw1jMpcIOUYLepvTWbNgfw7gEhu0')
 
 G = nx.Graph()
@@ -44,8 +45,13 @@ def add_coords(key, lat, long):
     coords[key] = (lat,long)
 
 for i in range(len(as_path)):
-    add_coords(chr(i+65),koordinat[as_path[i]][0],koordinat[as_path[i]][1])
-    
+    if (i == 1):
+        add_coords(chr(i+65),koordinat[as_path[len(as_path)-1]][0],koordinat[as_path[len(as_path)-1]][1])
+    elif (i>1):
+        add_coords(chr(i+65),koordinat[as_path[i-1]][0],koordinat[as_path[i-1]][1])
+    else:
+        add_coords(chr(i+65),koordinat[as_path[i]][0],koordinat[as_path[i]][1])
+ 
 for i, loc1 in enumerate(coords.keys()):
     for loc2 in list(coords.keys())[i+1:]:
         # Get coordinates of locations

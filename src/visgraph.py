@@ -12,7 +12,7 @@ def drawGraph(graph, path, adj):
     for i in range(len(graph)):
         for j in range(i+1, len(graph)):
             if adj[i][j] != 0:
-                G.add_edge(i, j, weight=graph[i][j])
+                G.add_edge(i, j)
 
     # Gambar graf dengan jalur terpendek
     pos = nx.spring_layout(G)

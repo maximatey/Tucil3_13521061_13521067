@@ -8,12 +8,11 @@ Alex Sander (13521061)
 Yobel Dean Christopher (13521067)
 
 ## Spesifikasi
-Python 10
+Python 3.10
 
 ## Cara menjalankan program
 1. Download/Clone repository ini
 2. Buka file `main.py` di folder `src`
 3. Run `main.py`
-4. Format file input dapat dilihat dari file `.txt` pada folder `test`
-4a. File input sudah disediakan dengan nama `itb.txt` pada folder `test` yang berdasarkan peta disekitar itb. Ilustrasi peletakan simpul dapat dilihat pada `itbmap.png`.
+4. Format file input dapat dilihat dari file `.txt` pada folder `test`. File input test case sudah disediakan dengan nama `itb.txt` pada folder `test` yang berdasarkan peta disekitar itb. Ilustrasi peletakan simpul dapat dilihat pada `itbmap.png` di folder `test`.
 5. Input simpul awal dan simpul tujuan.
